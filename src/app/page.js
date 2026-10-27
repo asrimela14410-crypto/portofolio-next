@@ -10,18 +10,20 @@ const skills = [
   { nama: "JavaScript", level: "Dasar" },
 ];
 
-const hobi = ["Membaca komik", "Mendesain poster", "Bermain game"];
+const hobi = ["Belajar lebih baik", "Edit vidio", "Menghabiskan uang"];
 
 const rencana = [
-  "Menuntaskan Kelas Industri UBIG sampai Semester 4",
   "Magang di perusahaan teknologi",
   "Bekerja sebagai Web Developer",
+  "Mempunyai uang yang banyak",
 ];
 
 const jadwal = [
   { hari: "Senin", waktu: "19.00 - 20.00", kegiatan: "Membaca ulang modul" },
-  { hari: "Rabu", waktu: "19.00 - 21.00", kegiatan: "Mengerjakan tugas praktik" },
-  { hari: "Jumat", waktu: "19.30 - 20.30", kegiatan: "Merekam video dan menulis laporan" },
+  { hari: "Selasa", waktu: "16.00 - 20.00", kegiatan: "Mengerjakan tugas dari sekolah" },
+  { hari: "Rabu", waktu: "19.30 - 20.30", kegiatan: "Merekam video dan menulis laporan" },
+  { hari: "Kamis", waktu: "18.30 - 20.30", kegiatan: "Meet dan live coding" },
+  { hari: "Jum'at", waktu: "19.30 - 20.30", kegiatan: "Mengerjakan tugas baru" },
 ];
 
 export default function Home() {
@@ -34,7 +36,16 @@ export default function Home() {
 
       <div className="mt-10 flex flex-col gap-6">
         <Kartu judul="Tentang Saya">
-          <p>Tulis 2 sampai 3 kalimat tentang dirimu di sini.</p>
+          <p className="font-semibold text-utama">
+            Berawal dari rasa ingin tahu, berkembang melalui kode, dan terus
+            berinovasi menciptakan solusi digital.
+          </p>
+          <p className="mt-3">
+            Saya Asri Mela Aldian Syah, siswa kelas XI SMKN yang sedang belajar
+            membuat website dengan HTML, CSS, JavaScript, dan Next.js di Kelas
+            Industri UBIG. Saya ingin terus berkembang menjadi Web Developer
+            yang bisa membuat karya bermanfaat.
+          </p>
         </Kartu>
 
         <div className="grid gap-6 md:grid-cols-2">
