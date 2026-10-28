@@ -10,13 +10,15 @@ const skills = [
   { nama: "JavaScript", level: "Dasar" },
 ];
 
-const hobi = ["Belajar lebih baik", "Edit vidio", "Menghabiskan uang"];
+const hobi = ["Belajar lebih baik", "Beli rumah banyak", "Menghabiskan uang"];
 
 const rencana = [
-  "Magang di perusahaan teknologi",
-  "Bekerja sebagai Web Developer",
-  "Mempunyai uang yang banyak",
+  "Menuntaskan Kelas Industri UBIG sampai Semester 4",
+  "Umroh dan Haji bersama keluarga setiap minggu",
+  "Tidak kekurangan uang",
+  "Mendapatkan uang setiap detik.",
 ];
+
 
 const jadwal = [
   { hari: "Senin", waktu: "19.00 - 20.00", kegiatan: "Membaca ulang modul" },
@@ -58,10 +60,7 @@ export default function Home() {
           </Kartu>
 
           <Kartu judul="Cita-cita">
-            <p>
-              Menjadi <strong>Full Stack Web Developer</strong>. Langkah yang
-              saya rencanakan:
-            </p>
+            
             <ol className="mt-2 list-decimal pl-5">
               {rencana.map((item) => (
                 <li key={item}>{item}</li>
