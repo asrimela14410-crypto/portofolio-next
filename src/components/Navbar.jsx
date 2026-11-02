@@ -24,9 +24,13 @@ export default function Navbar() {
           {menu.map((item) => {
             let kelas = "text-gray-200 hover:text-white";
 
-            if (pathname === item.href) {
-              kelas =
-                "font-bold text-white underline underline-offset-8";
+            let aktif = pathname.startsWith(item.href);
+            if (item.href === "/") {
+              aktif = pathname === "/";
+            }
+
+            if (aktif) {
+              kelas = "font-bold text-white underline underline-offset-8";
             }
 
             return (
