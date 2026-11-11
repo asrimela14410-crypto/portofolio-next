@@ -1,10 +1,10 @@
+
 import Image from "next/image";
 import Link from "next/link";
 import { proyek } from "@/data/proyek";
 
 export async function generateMetadata({ params }) {
   const { slug } = await params;
-
   const item = proyek.find((p) => p.slug === slug);
 
   if (!item) {
@@ -21,7 +21,6 @@ export async function generateMetadata({ params }) {
 
 export default async function DetailProyek({ params }) {
   const { slug } = await params;
-
   const item = proyek.find((p) => p.slug === slug);
 
   if (!item) {
@@ -63,11 +62,10 @@ export default async function DetailProyek({ params }) {
         alt={`Tangkapan layar ${item.judul}`}
         width={640}
         height={420}
-        loading="eager"
         className="mt-6 h-auto w-full rounded-xl border border-gray-200"
       />
 
-      <p className="mt-6 text-lg">
+      <p className="mt-6 text-lg text-gray-700">
         {item.deskripsi}
       </p>
 
@@ -75,7 +73,7 @@ export default async function DetailProyek({ params }) {
         Yang Saya Pelajari
       </h2>
 
-      <ul className="mt-3 list-disc pl-5">
+      <ul className="mt-3 list-disc space-y-2 pl-5 text-gray-700">
         {item.fitur.map((f) => (
           <li key={f}>{f}</li>
         ))}
