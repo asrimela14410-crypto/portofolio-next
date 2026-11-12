@@ -11,7 +11,7 @@ const rencana = [
   "Menuntaskan Kelas Industri UBIG sampai Semester 4",
   "Umroh dan Haji bersama keluarga setiap minggu",
   "Tidak kekurangan uang",
-  "Mendapatkan uang setiap detik.",
+  "Mendapatkan uang setiap detik",
 ];
 
 const jadwal = [
@@ -19,13 +19,15 @@ const jadwal = [
   { hari: "Selasa", waktu: "16.00 - 20.00", kegiatan: "Mengerjakan tugas dari sekolah" },
   { hari: "Rabu", waktu: "19.30 - 20.30", kegiatan: "Merekam video dan menulis laporan" },
   { hari: "Kamis", waktu: "18.30 - 20.30", kegiatan: "Meet dan live coding" },
-  { hari: "Jum'at", waktu: "19.30 - 20.30", kegiatan: "Mengerjakan tugas baru" },
+  { hari: "Jumat", waktu: "19.30 - 20.30", kegiatan: "Mengerjakan tugas baru" },
 ];
 
 export default function Tentang() {
   return (
     <main className="mx-auto max-w-5xl px-4 py-10">
-      <h1 className="text-3xl font-bold text-utama dark:text-sky-200 md:text-4xl">Tentang Saya</h1>
+      <h1 className="text-3xl font-bold text-utama dark:text-sky-200 md:text-4xl">
+        Tentang Saya
+      </h1>
 
       <div className="mt-8 flex flex-col gap-6">
         <Kartu judul="Perkenalan">
@@ -43,7 +45,7 @@ export default function Tentang() {
 
         <div className="grid gap-6 md:grid-cols-2">
           <Kartu judul="Hobi">
-            <ul className="list-disc pl-5">
+            <ul className="mt-2 list-disc pl-5">
               {hobi.map((item) => (
                 <li key={item}>{item}</li>
               ))}
@@ -70,7 +72,10 @@ export default function Tentang() {
             </thead>
             <tbody>
               {jadwal.map((j) => (
-                <tr key={j.hari} className="border-b border-gray-200 dark:border-gray-700">
+                <tr
+                  key={j.hari}
+                  className="border-b border-gray-200 dark:border-gray-700"
+                >
                   <td className="px-3 py-2">{j.hari}</td>
                   <td className="px-3 py-2">{j.waktu}</td>
                   <td className="px-3 py-2">{j.kegiatan}</td>

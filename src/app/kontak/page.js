@@ -1,4 +1,3 @@
-
 import FormKontak from "@/components/FormKontak";
 
 export const metadata = {
@@ -11,7 +10,7 @@ export default function Kontak() {
   return (
     <main className="mx-auto w-full max-w-5xl px-4 py-10">
       {/* Judul */}
-      <h1 className="text-3xl font-bold text-[#263d5b] md:text-4xl">
+      <h1 className="text-3xl font-bold text-[#263d5b] dark:text-sky-200 md:text-4xl">
         Hubungi Saya
       </h1>
 
@@ -28,7 +27,7 @@ export default function Kontak() {
 
         {/* Temukan Saya */}
         <aside className="rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-5 shadow-sm md:p-4">
-          <h2 className="text-xl font-bold text-[#263d5b]">
+          <h2 className="text-xl font-bold text-[#263d5b] dark:text-sky-200">
             Temukan Saya di
           </h2>
 
@@ -37,7 +36,7 @@ export default function Kontak() {
               href="https://github.com/asrimela14410-crypto"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#b94c5b] hover:underline"
+              className="text-[#b94c5b] dark:text-red-300 hover:underline"
             >
               GitHub
             </a>
@@ -46,7 +45,7 @@ export default function Kontak() {
               href="https://github.com/asrimela14410-crypto"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#b94c5b] hover:underline"
+              className="text-[#b94c5b] dark:text-red-300 hover:underline"
             >
               asrimela14410-crypto
             </a>
