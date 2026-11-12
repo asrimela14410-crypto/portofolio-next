@@ -26,13 +26,13 @@ export default async function DetailProyek({ params }) {
   if (!item) {
     return (
       <main className="mx-auto max-w-3xl px-4 py-10">
-        <h1 className="text-3xl font-bold text-utama">
+        <h1 className="text-3xl font-bold text-utama dark:text-sky-200">
           Proyek tidak ditemukan
         </h1>
 
         <Link
           href="/proyek"
-          className="mt-4 inline-block text-sm font-bold text-aksen hover:underline"
+          className="mt-4 inline-block text-sm font-bold text-aksen dark:text-red-300 hover:underline"
         >
           &larr; Kembali ke daftar proyek
         </Link>
@@ -44,16 +44,16 @@ export default async function DetailProyek({ params }) {
     <main className="mx-auto max-w-3xl px-4 py-10">
       <Link
         href="/proyek"
-        className="text-sm font-bold text-aksen hover:underline"
+        className="text-sm font-bold text-aksen dark:text-red-300 hover:underline"
       >
         &larr; Kembali ke daftar proyek
       </Link>
 
-      <h1 className="mt-4 text-3xl font-bold text-utama md:text-4xl">
+      <h1 className="mt-4 text-3xl font-bold text-utama dark:text-sky-200 md:text-4xl">
         {item.judul}
       </h1>
 
-      <p className="mt-2 text-gray-600">
+      <p className="mt-2 text-gray-600 dark:text-gray-400">
         {item.kategori} &middot; Dibuat di {item.minggu}
       </p>
 
@@ -62,18 +62,18 @@ export default async function DetailProyek({ params }) {
         alt={`Tangkapan layar ${item.judul}`}
         width={640}
         height={420}
-        className="mt-6 h-auto w-full rounded-xl border border-gray-200"
+        className="mt-6 h-auto w-full rounded-xl border border-gray-200 dark:border-gray-700"
       />
 
-      <p className="mt-6 text-lg text-gray-700">
+      <p className="mt-6 text-lg text-gray-700 dark:text-gray-300">
         {item.deskripsi}
       </p>
 
-      <h2 className="mt-8 text-2xl font-bold text-utama">
+      <h2 className="mt-8 text-2xl font-bold text-utama dark:text-sky-200">
         Yang Saya Pelajari
       </h2>
 
-      <ul className="mt-3 list-disc space-y-2 pl-5 text-gray-700">
+      <ul className="mt-3 list-disc space-y-2 pl-5 text-gray-700 dark:text-gray-300">
         {item.fitur.map((f) => (
           <li key={f}>{f}</li>
         ))}
