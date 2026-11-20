@@ -4,6 +4,7 @@ import ProyekCard from "@/components/ProyekCard";
 import SkillCard from "@/components/SkillCard";
 import { buttonVariants } from "@/components/ui/button";
 import { supabase } from "@/lib/supabase";
+import { Toaster } from "@/components/ui/sonner";
 
 const skills = [
   { nama: "HTML", level: "Menengah" },
@@ -80,6 +81,7 @@ export default async function Home() {
         >
           Lihat semua proyek
         </Link>
+        <Toaster position="top-center"/>
       </section>
 
     </main>
