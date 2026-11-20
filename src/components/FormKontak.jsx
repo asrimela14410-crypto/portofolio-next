@@ -1,13 +1,13 @@
-
 "use client";
 
 import { useState } from "react";
+import { Button } from "@/components/ui/button";
 
 const kelasInput =
-  "mt-1 w-full rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 p-2 text-gray-800 dark:text-gray-100";
+  "mt-1 w-full rounded-lg border border-gray-300 bg-white dark:bg-gray-800 p-2";
 
 export default function FormKontak() {
-  // State form
+  // Kode 6.8: state form
   const [nama, setNama] = useState("");
   const [email, setEmail] = useState("");
   const [hp, setHp] = useState("");
@@ -30,6 +30,7 @@ export default function FormKontak() {
         "Email harus memuat tanda @, contoh nama@gmail.com.";
     }
 
+    // Kode 6.10: validasi tambahan
     if (hp.length < 10) {
       errorBaru.hp = "Nomor HP minimal 10 angka.";
     }
@@ -48,12 +49,10 @@ export default function FormKontak() {
 
   return (
     <form onSubmit={kirim} noValidate className="space-y-4">
-      {/* Nama Lengkap */}
       <div>
         <label htmlFor="nama" className="block font-semibold">
           Nama lengkap
         </label>
-
         <input
           type="text"
           id="nama"
@@ -63,20 +62,15 @@ export default function FormKontak() {
           placeholder="Contoh: Na Jaemin"
           className={kelasInput}
         />
-
         {error.nama && (
-          <p className="mt-1 text-sm text-red-600">
-            {error.nama}
-          </p>
+          <p className="mt-1 text-sm text-aksen">{error.nama}</p>
         )}
       </div>
 
-      {/* Email */}
       <div>
         <label htmlFor="email" className="block font-semibold">
           Email
         </label>
-
         <input
           type="email"
           id="email"
@@ -86,20 +80,15 @@ export default function FormKontak() {
           placeholder="nama@gmail.com"
           className={kelasInput}
         />
-
         {error.email && (
-          <p className="mt-1 text-sm text-red-600">
-            {error.email}
-          </p>
+          <p className="mt-1 text-sm text-aksen">{error.email}</p>
         )}
       </div>
 
-      {/* Nomor HP */}
       <div>
         <label htmlFor="hp" className="block font-semibold">
           Nomor HP
         </label>
-
         <input
           type="tel"
           id="hp"
@@ -109,15 +98,11 @@ export default function FormKontak() {
           placeholder="081234567890"
           className={kelasInput}
         />
-
         {error.hp && (
-          <p className="mt-1 text-sm text-red-600">
-            {error.hp}
-          </p>
+          <p className="mt-1 text-sm text-aksen">{error.hp}</p>
         )}
       </div>
 
-      {/* Keperluan */}
       <div>
         <label htmlFor="keperluan" className="block font-semibold">
           Keperluan
@@ -137,18 +122,16 @@ export default function FormKontak() {
         </select>
 
         {error.keperluan && (
-          <p className="mt-1 text-sm text-red-600">
+          <p className="mt-1 text-sm text-aksen">
             {error.keperluan}
           </p>
         )}
       </div>
 
-      {/* Pesan */}
       <div>
         <label htmlFor="pesan" className="block font-semibold">
           Pesan
         </label>
-
         <textarea
           id="pesan"
           name="pesan"
@@ -158,30 +141,22 @@ export default function FormKontak() {
           placeholder="Tulis pesanmu di sini"
           className={kelasInput}
         />
-
         {error.pesan && (
-          <p className="mt-1 text-sm text-red-600">
-            {error.pesan}
-          </p>
+          <p className="mt-1 text-sm text-aksen">{error.pesan}</p>
         )}
       </div>
 
-      {/* Tombol Kirim */}
-      <button
-        type="submit"
-        className="rounded-lg bg-[#c51e32] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#a81729]"
-      >
+      <Button type="submit" size="lg">
         Kirim Pesan
-      </button>
+      </Button>
 
       <p className="text-xs leading-relaxed text-gray-500">
-        Form ini belum mengirim pesan. Pengiriman pesan
-        diaktifkan di Minggu 15.
+        Form ini belum mengirim pesan. Untuk menyapa saya, tulis pesan di halaman Buku Tamu.
       </p>
 
-      {/* Pesan Berhasil */}
+      {/* Kode 6.11: pesan berhasil */}
       {berhasil && (
-        <p className="rounded-lg bg-green-100 p-3 text-green-800">
+        <p className="rounded-lg bg-green-100 p-3 text-green-800 dark:bg-green-900 dark:text-green-100">
           Terima kasih, {nama}! Pesanmu sudah lolos pemeriksaan.
         </p>
       )}
