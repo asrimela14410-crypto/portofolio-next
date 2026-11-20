@@ -14,19 +14,26 @@ const skills = [
 ];
 
 export default async function Home() {
-  const { data: proyekTerbaru } = await supabase
+  const { data: proyekTerbaru, error } = await supabase
     .from("projects")
     .select("*")
     .order("created_at", { ascending: false })
     .limit(3);
 
+  if (error) {
+    console.error("Gagal mengambil data proyek:", error);
+  }
+
   return (
     <main className="mx-auto max-w-5xl px-4 py-10">
+
+      {/* Bagian Hero */}
       <Hero
         nama="Asri Mela Aldian Syah"
         tagline="Siswa kelas XI SMKN, calon Junior Web Developer di Kelas Industri UBIG."
       />
 
+      {/* Bagian Keahlian */}
       <section className="mt-10">
         <h2 className="mb-4 text-2xl font-bold text-primary">
           Keahlian
@@ -43,17 +50,26 @@ export default async function Home() {
         </div>
       </section>
 
+      {/* Bagian Proyek Terbaru */}
       <section className="mt-10">
         <h2 className="mb-4 text-2xl font-bold text-primary">
           Proyek Terbaru
         </h2>
 
-        <div className="grid gap-6 md:grid-cols-3">
-          {proyekTerbaru &&
-            proyekTerbaru.map((item) => (
-              <ProyekCard key={item.slug} proyek={item} />
+        {proyekTerbaru && proyekTerbaru.length > 0 ? (
+          <div className="grid gap-6 md:grid-cols-3">
+            {proyekTerbaru.map((item) => (
+              <ProyekCard
+                key={item.slug}
+                proyek={item}
+              />
             ))}
-        </div>
+          </div>
+        ) : (
+          <p className="text-muted-foreground">
+            Belum ada proyek yang tersedia.
+          </p>
+        )}
 
         <Link
           href="/proyek"
@@ -65,6 +81,7 @@ export default async function Home() {
           Lihat semua proyek
         </Link>
       </section>
+
     </main>
   );
 }

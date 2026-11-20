@@ -1,6 +1,16 @@
 import Image from "next/image";
+import Link from "next/link";
+import { buttonVariants } from "@/components/ui/button";
 
 export default function Hero ({ nama, tagline }) {
+  <div className="mt-5 flex justify-center gap-3 md:justify-start">
+    <Link href="/proyek" className={buttonVariants({ size:"lg"})}>
+    Lihat Proyek
+    </Link>
+    <Link href="/kontak" className={buttonVariants({ variant: "outline", size: "lg "})}>
+    Hubungi Saya
+    </Link>
+  </div>
   return (
     <section className="flex flex-col items-center gap-6 text-center md:flex-row md:text-left">
       <Image
